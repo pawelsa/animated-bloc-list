@@ -68,17 +68,10 @@ class _AnimatedStreamListState<E> extends State<AnimatedStreamList<E>>
 
   @override
   void didUpdateWidget(AnimatedStreamList oldWidget) {
-    print('TEST: did update widget');
-  }
-
-  @override
-  void setState(VoidCallback fn) {
-    print('TEST: setState');
-  }
-
-  @override
-  void didChangeDependencies() {
-    print('TEST: did change dependencies');
+    if(this.widget.blocList != oldWidget.blocList){
+      startListening();
+    }
+    super.didUpdateWidget(oldWidget);
   }
 
   @override
