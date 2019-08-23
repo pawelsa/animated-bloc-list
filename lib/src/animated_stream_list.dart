@@ -67,6 +67,21 @@ class _AnimatedStreamListState<E> extends State<AnimatedStreamList<E>>
   }
 
   @override
+  void didUpdateWidget(AnimatedStreamList oldWidget) {
+    print('TEST: did update widget');
+  }
+
+  @override
+  void setState(VoidCallback fn) {
+    print('TEST: setState');
+  }
+
+  @override
+  void didChangeDependencies() {
+    print('TEST: did change dependencies');
+  }
+
+  @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     switch (state) {
       case AppLifecycleState.resumed:
