@@ -68,10 +68,10 @@ class _AnimatedStreamListState<E> extends State<AnimatedStreamList<E>>
 
   @override
   void didUpdateWidget(AnimatedStreamList oldWidget) {
+    super.didUpdateWidget(oldWidget);
     if(this.widget.blocList.length != oldWidget.blocList.length){
       startListening();
     }
-    super.didUpdateWidget(oldWidget);
   }
 
   @override
